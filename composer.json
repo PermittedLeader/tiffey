@@ -1,0 +1,33 @@
+{
+    "name": "permittedleader/tiffey",
+    "type": "project",
+    "require": {
+        "laravel/framework": "^10.0"
+    },
+    "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.10",
+        "pestphp/pest": "^2.33",
+        "pestphp/pest-plugin-laravel": "^2.2"
+    },
+    "license": "GNU GPL v3",
+    "autoload": {
+        "files": [
+            "app/Helpers.php"
+        ],
+        "psr-4": {
+            "Permittedleader\\Tiffey\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Myles Smith",
+            "email": "hello@itsmyl.es"
+        }
+    ],
+    "minimum-stability": "stable",
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
