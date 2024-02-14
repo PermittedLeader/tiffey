@@ -4,7 +4,7 @@ namespace Permittedleader\Tiffey;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
-class FormsServiceProvider extends ServiceProvider
+class TiffeyServiceProvider extends ServiceProvider
 {
     public function boot()
     {
