@@ -21,13 +21,23 @@
     "authors": [
         {
             "name": "Myles Smith",
-            "email": "hello@itsmyl.es"
+            "email": "159888845+PermittedLeader@users.noreply.github.com"
         }
     ],
     "minimum-stability": "stable",
     "config": {
         "allow-plugins": {
             "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Permittedleader\\Tiffey\\TiffeyServiceProvider"
+            ]
+        },
+        "branch-alias": {
+            "dev-main": "1.0.x-dev"
         }
     }
 }
