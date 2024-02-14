@@ -12,7 +12,7 @@
     "license": "GNU GPL v3",
     "autoload": {
         "files": [
-            "app/Helpers.php"
+            "src/Helpers.php"
         ],
         "psr-4": {
             "Permittedleader\\Tiffey\\": "src/"
