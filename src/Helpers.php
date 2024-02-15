@@ -86,7 +86,7 @@ if (! function_exists('cssToHex')) {
      */
     function cssToHex($colorName)
     {
-        include __DIR__.'/../colors.php';
+        $colors = config('tiffey.colors');
         $color = explode('-', $colorName);
         if (count($color) === 3) {
             return $colors[$color[1]][$color[2]];

@@ -1,15 +1,15 @@
 <div class="flex flex-row justify-between">
-    <div>
-        {{ config('app.name') }}
+    <div class="flex flex-row gap-2">
+        <div>{{ config('app.name') }}</div>
         <x-tiffey::nav.link href="/">Home</x-tiffey::nav.link>
     </div>
-    <div>
+    <div class="flex flex-row gap-2">
         @auth
         <x-tiffey::nav.dropdown title="">
         </x-tiffey::nav.dropdown>
         <form method="POST" action="{{ route('logout') }}" class="ml-3">
             @csrf
-            <x-tiffey::form-button href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();" color="bg-brand-500">
+            <x-tiffey::form-button href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();" color="bg-brand-mid">
                 {{ __('Logout') }}
             </x-tiffey::form-button>
         </form>
@@ -21,7 +21,7 @@
         </x-tiffey::nav.link>
         @endif
         <span class="ml-3">
-            <x-tiffey::button href="{{ route('login') }}" color="bg-brand-500">
+            <x-tiffey::button href="{{ route('login') }}" color="bg-brand-mid">
                 {{ __('Login') }}
             </x-tiffey::button>
         </span>

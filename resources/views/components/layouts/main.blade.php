@@ -17,9 +17,9 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-body antialiased">
-        <div class="min-h-screen bg-gray-50 dark:bg-gray-900 dark:text-white">
-            <div class="md:container md:mx-auto shadow-b">
-                @include('nav')
+        <div class="min-h-screen bg-gray-50 dark:bg-gray-900 dark:text-white pt-2">
+            <div class="md:container md:mx-auto shadow-b md:px-5">
+                <x-tiffey::nav />
             </div>
             <div class="md:container md:mx-auto md:px-5">
                 @stack('alerts')
@@ -76,8 +76,8 @@
                     </div>
                 </div>
             </div>
-            <footer class="md:container md:mx-auto py-3 px-3 md:px-5 text-gray-500 text-sm">
-                @includeIf('footer')
+            <footer class="md:container md:mx-auto py-3 px-3 md:px-5 text-gray-mid text-sm">
+                <x-tiffey::layouts.footer />
             </footer>
         </div>
 

@@ -7,7 +7,7 @@
                         <div class="flex pt-0 border-r-2 mr-2">
                             <x-tiffey::icon.logo class="h-16 w-auto pt-3 mr-2"/> 
                         </div> 
-                        <div class="text-brand-500 mr-6">
+                        <div class="text-brand-mid mr-6">
                             <a class="not-decorated" href="/">
                                 {{config('app.name')}}
                             </a>
@@ -16,7 +16,7 @@
                         <div class="flex pt-0 border-r-2 mr-2">
                             <x-tiffey::icon.logo class="h-16 w-auto pt-3 mr-2"/> 
                         </div>
-                        <div class="text-black bg-brand-500 mr-6 px-1">
+                        <div class="text-black bg-brand-mid mr-6 px-1">
                             <a class="not-decorated" href="/">
                                 {{config('app.name')}} - {{ App::environment() }}
                             </a>
@@ -27,7 +27,7 @@
                 <x-tiffey::validation-errors />
         
                 @if (session('status'))
-                    <div class="mb-4 font-medium text-sm text-green-600">
+                    <div class="mb-4 font-medium text-sm text-success-mid">
                         {{ session('status') }}
                     </div>
                 @endif

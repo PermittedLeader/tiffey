@@ -9,12 +9,13 @@ class TiffeyServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__."/../config/tiffey.php" => config_path('tiffey.php'),
+            __DIR__."/../config/tiffey.php" => config_path('tiffey.php')
+        ],'tiffey-config');
+        $this->publishes([
             __DIR__."/../resources/views" => resource_path('views/vendor/tiffey')
-        ]);
-        
-        $this->loadViewsFrom(__DIR__.'/../resources/views/','tiffey');
-        Blade::componentNamespace('Tiffey\\Views\\Components','tiffey');
+        ],'tiffey-views');
+        $this->loadViewsFrom(__DIR__.'/../resources/views','tiffey');
+        Blade::componentNamespace('Permittedleader\\Tiffey\\View','tiffey');
     }
 
     public function register()
