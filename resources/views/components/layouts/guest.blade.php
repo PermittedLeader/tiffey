@@ -19,13 +19,13 @@
     <body class="font-body antialiased">
         <div class="flex flex-col min-h-screen place-content-center bg-gray-50 dark:bg-gray-900">
             <div class="max-w-2xl md:px-5 md:w-2/4 md:mx-auto text-center">
-                <div class="flex flex-row gap-2 place-content-center">
-                    @if(\View::exists('tiffey::components.icon.logo'))
-                    <div class="my-auto px-4 border-r-2">
-                        @include('tiffey::components.icon.logo')
+                <div class="flex flex-row gap-2 place-content-center pb-4">
+                    @if(\View::exists('components.icon.logo'))
+                    <div class="px-4 border-r-2">
+                        <x-icon.logo class="h-16" />
                     </div>
                     @endif
-                    <div class="my-auto px-2">
+                    <div class="my-auto px-2 text-xl font-bold">
                         {{ config('app.name') }}
                     </div>
                 </div>
@@ -49,7 +49,6 @@
                         </x-tiffey::alert>
                     @endforeach
                 @endif
-                <x-tiffey::alert level="warning">Test</x-tiffey::alert>
             </div>
             <div class="max-w-2xl md:px-5 md:w-2/4 md:mx-auto">
                 {{ $slot }} 

@@ -18,7 +18,7 @@
                 <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
             </label>
         </div>
-            <x-slot:footerActions>
+            <x-slot name="footerActions">
                 @if (Route::has('password.request'))
                     <x-tiffey::button href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
@@ -27,7 +27,7 @@
                 <x-tiffey::form-button color="bg-brand-mid">
                     {{ __('Log in') }}
                 </x-tiffey::form-button>
-            </x-slot:footerActions>
+            </x-slot>
         </x-tiffey::card>
     </form>
 </x-guest-layout>
