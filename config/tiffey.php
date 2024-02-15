@@ -2,6 +2,11 @@
 
 return [
     'livewire' => false,
+
+    'rounded' => 'rounded-sm',
+
+    'card-border' => 'border-t-4',
+
     'colors'=>[
         "no" => "#ec008e",
         "yes"=>"#8cc73f",
