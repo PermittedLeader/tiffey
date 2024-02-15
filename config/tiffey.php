@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'livewire' => false,
+
     'rounded' => 'rounded-sm',
 
     'card-border' => 'border-t-4',
