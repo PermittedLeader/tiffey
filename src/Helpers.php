@@ -62,11 +62,13 @@ if (! function_exists('contrastColor')) {
      */
     function contrastColor($color)
     {
+        
         if (substr_count($color, ',')) {
             $color = explode(',', $color);
         } else {
             $color = hexToRGB($color);
         }
+        
         $white = (float) luminanceDifference($color, [255, 255, 255]);
         $black = (float) luminanceDifference($color, [0, 0, 0]);
         if ($white > $black) {

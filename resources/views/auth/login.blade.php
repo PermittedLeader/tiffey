@@ -30,4 +30,4 @@
             </x-slot>
         </x-tiffey::card>
     </form>
-</x-guest-layout>
+</x-tiffey::layouts.guest-layout>
