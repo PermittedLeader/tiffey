@@ -1,16 +1,22 @@
 <div class="flex flex-row justify-between">
-    <div class="flex flex-row gap-2">
-        @if(\View::exists('tiffey::components.icon.logo'))
-        <div class="">
-            @include('tiffey::components.icon.logo')
+    <div class="flex flex-row gap-2 content-center">
+        <div class="flex flex-row gap-2 place-content-center">
+            @if(\View::exists('components.icon.logo'))
+            <div class="px-4">
+                <x-icon.logo class="h-16" />
+            </div>
+            @endif
+            <div class="my-auto px-2 text-xl font-bold">
+                <a href="/">{{ config('app.name') }}</a>
+            </div>
         </div>
-        @endif
-        <div>{{ config('app.name') }}</div>
-        <x-tiffey::nav.link href="/">Home</x-tiffey::nav.link>
+        <x-tiffey::nav.link href="/" active="{{ request()->routeIs('welcome') }}">Home</x-tiffey::nav.link>
+        <x-tiffey::nav.link href="/dashboard" :active="request()->routeIs('dashboard')">Dashboard</x-tiffey::nav.link>
     </div>
     <div class="flex flex-row gap-2">
         @auth
-        <x-tiffey::nav.dropdown title="">
+        <x-tiffey::nav.dropdown title="{{ Auth::user()->name }}">
+            <x-tiffey::nav.link href="/profile" :active="request()->routeIs('dashboard')">Profile</x-tiffey::nav.link>
         </x-tiffey::nav.dropdown>
         <form method="POST" action="{{ route('logout') }}" class="ml-3">
             @csrf
@@ -25,11 +31,12 @@
             {{ __('Register') }}
         </x-tiffey::nav.link>
         @endif
-        <span class="ml-3">
+        <div class="h-full flex place-items-center px-2 py-1">
             <x-tiffey::button href="{{ route('login') }}" color="bg-brand-mid">
                 {{ __('Login') }}
             </x-tiffey::button>
-        </span>
+        </div>
+            
     @endguest
     </div>
 </div>

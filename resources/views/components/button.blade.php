@@ -24,8 +24,6 @@
         $buttonClasses .= " hover:bg-opacity-75 hover:shadow-inner";
     }
 @endphp
-<a {{ $attributes->whereStartsWith('href') }} {{ $attributes->wire('click') }} role="button">
-    <button {{ $attributes->whereDoesntStartWith(['href','wire:click'])->merge(['class'=>$buttonClasses]) }} role="button"> 
+<a {{ $attributes->whereStartsWith('href') }} {{ $attributes->wire('click') }} {{ $attributes->whereDoesntStartWith(['href','wire:click'])->merge(['class'=>$buttonClasses]) }} role="button">
         {{ $slot }}
-    </button>
 </a>

@@ -1,8 +1,8 @@
 @props(['title'])
 
 
-<div class="sm:flex sm:items-center sm:ml-6">
-    <div class="relative" x-data="{ open: false }">
+<div class="sm:flex sm:items-center">
+    <div class="relative" x-data="{ open: false }" @click.outside="open = false">
         <div @click="open = ! open">
             <x-tiffey::nav.link class="items-center">
                 <span class="mr-2 whitespace-nowrap">{{ $title ?? '' }}</span>
