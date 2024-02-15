@@ -17,8 +17,20 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-body antialiased">
-        <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
-            <div class="md:container md:mx-auto md:px-5">
+        <div class="flex flex-col min-h-screen place-content-center bg-gray-50 dark:bg-gray-900">
+            <div class="max-w-2xl md:px-5 md:w-2/4 md:mx-auto text-center">
+                <div class="flex flex-row gap-2 place-content-center">
+                    @if(\View::exists('tiffey::components.icon.logo'))
+                    <div class="my-auto px-4 border-r-2">
+                        @include('tiffey::components.icon.logo')
+                    </div>
+                    @endif
+                    <div class="my-auto px-2">
+                        {{ config('app.name') }}
+                    </div>
+                </div>
+            </div>
+            <div class="max-w-2xl md:px-5 md:w-2/4 md:mx-auto">
                 @stack('alerts')
                 @if(Session::has('messages'))
                     @foreach (Session::pull('messages') as $message)
@@ -37,13 +49,10 @@
                         </x-tiffey::alert>
                     @endforeach
                 @endif
+                <x-tiffey::alert level="warning">Test</x-tiffey::alert>
             </div>
-            <div class="md:container md:mx-auto md:px-5">
-                <div class="">
-                    <div>
-                        {{ $slot }} 
-                    </div>
-                </div>
+            <div class="max-w-2xl md:px-5 md:w-2/4 md:mx-auto">
+                {{ $slot }} 
             </div>
         </div>
 

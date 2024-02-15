@@ -20,6 +20,6 @@
             break;
     }
 @endphp
-<button {{ $attributes->merge(['class'=>'h-full inline-block my-auto text-center rounded-sm hover:bg-opacity-75 hover:shadow-inner font-bold dark:border dark:border-'.$text.' text-'.$text.' '.$color.' '.$sizeClasses]) }} role="button">
+<button {{ $attributes->merge(['class'=>'inline-block my-auto text-center '.config('tiffey.rounded').' hover:bg-opacity-75 hover:shadow-inner font-bold dark:border dark:border-'.$text.' text-'.$text.' '.$color.' '.$sizeClasses]) }} role="button">
     {{ $slot }}
 </button>

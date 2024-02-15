@@ -3,6 +3,7 @@ namespace Permittedleader\Tiffey;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Livewire\Livewire;
 
 class TiffeyServiceProvider extends ServiceProvider
 {
@@ -21,5 +22,6 @@ class TiffeyServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__."/../config/tiffey.php",'tiffey');
+        
     }
 }

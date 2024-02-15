@@ -1,67 +1,33 @@
-<x-guest-layout>
-    <div class="flex justify-center place-items-center h-screen">
-        <div class="w-96">
-            <x-card>
-                <div class="flex flex-row place-items-center justify-center my-4">
-                    @if (App::environment('production'))
-                        <div class="flex pt-0 border-r-2 mr-2">
-                            <x-tiffey::icon.logo class="h-16 w-auto pt-3 mr-2"/> 
-                        </div> 
-                        <div class="text-brand-mid mr-6">
-                            <a class="not-decorated" href="/">
-                                {{config('app.name')}}
-                            </a>
-                        </div>
-                    @else
-                        <div class="flex pt-0 border-r-2 mr-2">
-                            <x-tiffey::icon.logo class="h-16 w-auto pt-3 mr-2"/> 
-                        </div>
-                        <div class="text-black bg-brand-mid mr-6 px-1">
-                            <a class="not-decorated" href="/">
-                                {{config('app.name')}} - {{ App::environment() }}
-                            </a>
-                        </div>
-                    @endif
-                </div>
-                
-                <x-tiffey::validation-errors />
-        
-                @if (session('status'))
-                    <div class="mb-4 font-medium text-sm text-success-mid">
-                        {{ session('status') }}
-                    </div>
-                @endif
-        
-                <form method="POST" action="{{ route('login') }}">
-                    @csrf
-        
-                    <div>
-                        <x-tiffey::input id="email"  type="email" name="email" :value="old('email')" label="{{ __('crud.users.inputs.email') }}" required autofocus />
-                    </div>
-        
-                    <div class="mt-4">
-                        <x-tiffey::input id="password"  type="password" name="password" label="{{ __('crud.users.inputs.password') }}" required autocomplete="current-password" />
-                    </div>
-        
-                    <div class="block mt-4">
-                        <x-tiffey::input.checkbox id="remember_me" name="remember" label="{{ __('Remember me') }}"/>
-                    </div>
-        
-                    <div class="flex items-center justify-end mt-4">
-                        @if (Route::has('password.request'))
-                            <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                                {{ __('Forgot your password?') }}
-                            </a>
-                        @endif
-        
-                        <x-tiffey::form-button class="ml-4">
-                            {{ __('Log in') }}
-                        </x-tiffey::form-button>
-                    </div>
-                </form>
-            </x-card>
+<x-tiffey::layouts.guest-layout>
+    @if (session('status'))
+        <x-tiffey::alert level="info">{{ $status }}</x-tiffey::alert>
+    @endif
+
+    <form method="POST" action="{{ route('login') }}" class="w-full">
+        @csrf
+        <x-tiffey::card>
+        <!-- Email Address -->
+        <x-tiffey::input id="email" type="email" label="{{ __('Email') }}" :value="old('email')" required autofocus autocomplete="username" />
+
+        <x-tiffey::input id="password" type="password" label="{{ __('Password') }}" required autocomplete="current-password" />
+
+        <!-- Remember Me -->
+        <div class="block mt-4">
+            <label for="remember_me" class="inline-flex items-center">
+                <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
+                <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
+            </label>
         </div>
-    </div>
-    
-    
+            <x-slot:footerActions>
+                @if (Route::has('password.request'))
+                    <x-tiffey::button href="{{ route('password.request') }}">
+                        {{ __('Forgot your password?') }}
+                    </x-tiffey::button>
+                @endif
+                <x-tiffey::form-button color="bg-brand-mid">
+                    {{ __('Log in') }}
+                </x-tiffey::form-button>
+            </x-slot:footerActions>
+        </x-tiffey::card>
+    </form>
 </x-guest-layout>

@@ -1,5 +1,10 @@
 <div class="flex flex-row justify-between">
     <div class="flex flex-row gap-2">
+        @if(\View::exists('tiffey::components.icon.logo'))
+        <div class="">
+            @include('tiffey::components.icon.logo')
+        </div>
+        @endif
         <div>{{ config('app.name') }}</div>
         <x-tiffey::nav.link href="/">Home</x-tiffey::nav.link>
     </div>

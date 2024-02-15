@@ -2,7 +2,9 @@
     "name": "permittedleader/tiffey",
     "type": "project",
     "require": {
-        "laravel/framework": "^10.0"
+        "laravel/framework": "^10.0",
+        "livewire/livewire": "^3.4",
+        "livewire/volt": "^1.6"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.10",

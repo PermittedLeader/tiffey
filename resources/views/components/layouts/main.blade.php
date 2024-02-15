@@ -11,9 +11,7 @@
 
         <!-- Styles -->
         @stack('styles')
-        @if(config('tiffey.livewire'))
-            @livewireStyles 
-        @endif
+        @livewireStyles 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-body antialiased">
@@ -82,9 +80,7 @@
         </div>
 
         @stack('modals')
-        @if(config('tiffey.livewire'))
-            @livewireScripts
-        @endif
+        @livewireScripts
         @stack('scripts')
         
     </body> 
