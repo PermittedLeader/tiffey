@@ -8,7 +8,7 @@
     }
     $divClasses = "flex flex-col w-full h-full";
     $textClasses = "";
-    $fieldClasses = "h-full my-1 p-2 border border-gray-200 dark:bg-gray-900 dark:text-white rounded";
+    $fieldClasses = "h-full my-1 p-2 border ".config('tiffey.border-color')." dark:bg-gray-900 dark:text-white rounded";
     if($inBlock=="show"){
         $textClasses .= " font-bold";
     } elseif($inBlock){

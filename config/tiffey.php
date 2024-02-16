@@ -5,7 +5,9 @@ return [
 
     'rounded' => 'rounded-sm',
 
-    'card-border' => 'border-t-4',
+    'card-border' => 'border-t-4 border-secondary-mid',
+
+    'border-color' => 'border-grey-500',
 
     'colors'=>[
         "no" => "#ec008e",
