@@ -1,19 +1,26 @@
-<div class="flex flex-row justify-between">
-    <div class="flex flex-row gap-2 content-center">
-        <div class="flex flex-row gap-2 place-content-center">
+<div class="flex flex-col md:flex-row justify-between" x-data="{ open: false }" @click.outside="open = false">
+    <div class="flex flex-col md:flex-row md:gap-2 content-center">
+        <div class="flex flex-row gap-2 justify-between md:place-content-center">
             @if(\View::exists('components.icon.logo'))
-            <div class="pr-2">
+            <div class="pr-2 hidden md:flex">
                 <x-icon.logo class="h-16" />
             </div>
             @endif
             <div class="my-auto px-2 text-xl font-bold text-brand-mid">
                 <a href="/">{{ config('app.name') }}</a>
             </div>
+            <div @click="open = ! open" class="mx-2 flex md:hidden">
+                <i class="fa-solid fa-bars" x-show="!open"></i>
+                <i class="fa-solid fa-x-mark" x-show="open"></i>
+                <span class="fa-sr-only">Show/hide menu</span>
+            </div>
         </div>
-        <x-tiffey::nav.link href="/" active="{{ request()->routeIs('welcome') }}">Home</x-tiffey::nav.link>
-        <x-tiffey::nav.link href="/dashboard" :active="request()->routeIs('dashboard')">Dashboard</x-tiffey::nav.link>
+        <div class="flex flex-col md:flex md:flex-row md:gap-2" x-bind:class="{ 'hidden': !open }">
+            <x-tiffey::nav.link href="/" active="{{ request()->routeIs('welcome') }}">Home</x-tiffey::nav.link>
+            <x-tiffey::nav.link href="/dashboard" :active="request()->routeIs('dashboard')">Dashboard</x-tiffey::nav.link>
+        </div>
     </div>
-    <div class="flex flex-row gap-2">
+    <div class="flex flex-col md:flex md:flex-row gap-2" x-bind:class="{ 'hidden': !open }">
         @auth
         <x-tiffey::nav.dropdown title="{{ Auth::user()->name }}" position="right">
             <x-tiffey::nav.link href="/profile" :active="request()->routeIs('dashboard')">Profile</x-tiffey::nav.link>
