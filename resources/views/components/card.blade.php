@@ -11,7 +11,7 @@
                 <div class="my-auto">
                     <h2 class="lext-lg font-bold">
                         @if($collapsible)
-                            <i class="mr-2 fas" :class="cardShow ? 'fa-chevron-down' : 'fa-chevron-right'" aria-hidden="true"></i>
+                            <i class="mx-1 w-4 fas" :class="cardShow ? 'fa-chevron-down' : 'fa-chevron-right'" aria-hidden="true"></i>
                             <span class="fa-sr-only">Show/Hide</span>
                         @endif
                         {{ $header }}
