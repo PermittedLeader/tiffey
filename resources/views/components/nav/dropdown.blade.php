@@ -5,7 +5,7 @@
     <div class="relative" x-data="{ open: false }" @click.outside="open = false">
         <div @click="open = ! open">
             <x-tiffey::nav.link class="items-center">
-                <span class="mr-2 whitespace-nowrap">{{ $title ?? '' }}</span>
+                {{ $title ?? '' }} &nbsp;
 
                 <i class="fa-solid fa-angle-up" x-show="open"></i>
                 <i class="fa-solid fa-angle-down" x-show="! open"></i>
