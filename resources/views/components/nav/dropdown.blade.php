@@ -20,7 +20,7 @@
                 x-transition:leave-start="transform opacity-100 scale-100"
                 x-transition:leave-end="transform opacity-0 scale-95"
                 style="display: none;"
-                class="relative md:absolute z-0 {{ $position == 'right' ? '-right-0' : '' }} md:z-50 mt-0 md:mt-1 shadow-lg bg-white dark:bg-black">
+                class="relative md:absolute z-0 {{ $position == 'right' ? '-right-0' : '' }} md:z-50 mt-0 md:mt-1 shadow-lg bg-white dark:bg-black text-sm">
             <div class="md:rounded-md md:w-48 {{ $position == 'right' ? 'text-right' : '' }}">
                 {{ $slot }}
             </div>
