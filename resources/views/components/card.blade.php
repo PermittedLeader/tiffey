@@ -1,6 +1,6 @@
 @props(['open'=>true,'collapsible'=>false, 'inModal'=>false])
 <div 
-    class="flex flex-col bg-white dark:bg-gray-500 dark:bg-opacity-25 {{ config('tiffey.rounded') }} border-solid {{ config('tiffey.card-border') }} {{ $inModal ? '' : 'mt-2 shadow-xl dark:shadow-none mb-4 mx-1 md:mx-0' }}"
+    class="flex flex-col bg-white dark:bg-gray-500 dark:bg-opacity-25 {{ config('tiffey.rounded') }} border-solid {{ config('tiffey.card-border') }} {{ $inModal ? '' : 'mt-2 shadow-xl dark:shadow-none mb-4 mx-1 md:mx-0' }} divide-y"
     x-data="{ cardShow: {{ $open == "true" ? "true" : "false" }} }">
     @if(isset($header)||isset($actions))
         <div class="flex flex-col md:flex-row py-1 px-2  justify-between"
@@ -30,11 +30,11 @@
             @endif
         </div>
     @endif
-    <div class="py-2 px-3 grow border-solid border-t {{ config('tiffey.border-color') }}" x-show="cardShow">
+    <div class="py-2 px-3 grow" x-show="cardShow">
         {{ $slot }}
     </div>
     @if(isset($footerActions))
-    <div class="flex flex-col md:flex-row justify-end gap-2 py-1 px-2 border-t {{ config('tiffey.border-color') }}" x-show="cardShow">
+    <div class="flex flex-col md:flex-row justify-end gap-2 py-1 px-2" x-show="cardShow">
         {{ $footerActions }}
     </div>
     @endif

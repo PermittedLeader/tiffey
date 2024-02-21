@@ -19,7 +19,7 @@
             $sizeClasses = "px-3 py-2 text-sm";
             break;
     }
-    $buttonClasses = 'inline-block my-auto text-center '.config('tiffey.rounded').' font-bold dark:border-opacity-25 dark:border dark:border-'.$text.' text-'.$text.' '.$color.' '.$sizeClasses;
+    $buttonClasses = 'inline-block my-auto text-center '.config('tiffey.rounded').' font-bold dark:border dark:border-opacity-25 dark:border-'.$text.' text-'.$text.' '.$color.' '.$sizeClasses;
     if(!$attributes->has('disabled')){
         $buttonClasses .= " hover:bg-opacity-75 hover:shadow-inner";
     }

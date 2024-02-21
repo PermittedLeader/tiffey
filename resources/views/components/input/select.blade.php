@@ -1,18 +1,21 @@
-@props(['type'=>'text','label','hint'=>false,'inBlock'=>false,'name'=>false, 'error'=>false,'id'=>false, 'required'=>false])
+@props(['label','hint'=>false,'inBlock'=>false,'name'=>false, 'error'=>false, 'id'=>false, 'required'=>false])
 @php
     if(!$name){
         $name = Str::snake($label);
+    } else {
+        $name = $name;
     }
     if(!$id){
         $id= Str::snake(preg_replace('/[^A-Za-z0-9_]/',' ',$name));
     }
-    $divClasses = "flex flex-col w-full h-full";
-    $textClasses = "text-black dark:text-white";
-    $fieldClasses = "h-full my-1 p-2 border ".config('tiffey.border-color')." dark:bg-gray-900 dark:text-white rounded";
+    $divClasses = "flex flex-col";
+    $textClasses = "";
+    $fieldClasses = "w-full my-1 p-2 ".config('tiffey.border-color')." dark:bg-gray-900 dark:text-white rounded";
     if($inBlock=="show"){
-        $textClasses .= " font-bold";
+        $textClasses .= " font-bold ";
+        $divClasses .= " px-3 ";
     } elseif($inBlock){
-        $textClasses .= " sr-only";
+        $textClasses .= " sr-only ";
     } else {
         $textClasses .= " font-bold text-lg";
         $divClasses .= " mb-3 border-l-4 border-transparent";
@@ -30,14 +33,16 @@
         {{ $label }}
         
         @if ($required)
-            <x-tiffey::input.required /> 
+            <x-tiffey::input.required />
         @endif
     </label>
     @if($hint)
         <x-tiffey::input.hint>{{ $hint }}</x-tiffey::input.hint>
     @endif
     @error($name)
-        <x-tiffey::input.hint class="text-warning-dark dark:text-warning-light">{{ $message }}</x-tiffey::input.hint>
+        <x-tiffey::input.hint class="text-warning-dark">{{ $message }}</x-tiffey::input.hint>
     @enderror
-    <input type="{{ $type }}" {{ $attributes->merge(['class'=>$fieldClasses]) }} name="{{ $name }}" id="{{ $id }}" @required($required) /> 
+    <select id="{{ $id }}" {{ $attributes->merge(['class'=>$fieldClasses]) }} name="{{ $name }}" @required($required)>
+        {{ $slot }}
+    </select>
 </div>

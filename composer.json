@@ -24,7 +24,6 @@
             "email": "159888845+PermittedLeader@users.noreply.github.com"
         }
     ],
-    "minimum-stability": "stable",
     "config": {
         "allow-plugins": {
             "pestphp/pest-plugin": true
