@@ -15,6 +15,12 @@ class TiffeyServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__."/../resources/views" => resource_path('views/vendor/tiffey')
         ],'tiffey-views');
+        $this->publishes([
+            __DIR__."/../resources/views/components/layouts/footer.blade.php" => resource_path('views/vendor/tiffey/components/layouts/footer.blade.php')
+        ],'tiffey-footer');
+        $this->publishes([
+            __DIR__."/../resources/views/components/nav/index.blade.php" => resource_path('views/vendor/tiffey/components/nav/index.blade.php')
+        ],'tiffey-nav');
         $this->loadViewsFrom(__DIR__.'/../resources/views','tiffey');
         Blade::componentNamespace('Permittedleader\\Tiffey\\View','tiffey');
     }
