@@ -95,7 +95,7 @@ if (! function_exists('cssToHex')) {
         } elseif (count($color) === 2) {
             return $colors[$color[1]];
         } else {
-            throw new \Exception('Color name not found', 1);
+            throw new \Exception('Color name not found '.$colorName, 1);
         }
     }
 }
