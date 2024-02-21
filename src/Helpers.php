@@ -1,5 +1,7 @@
 <?php
 
+use Permittedleader\Tiffey\Exceptions\ColorNotFoundException;
+
 if (! function_exists('luminanceDifference')) {
     /**
      * Accepts two arrays [R,G,B] of colors to provide difference
@@ -95,7 +97,7 @@ if (! function_exists('cssToHex')) {
         } elseif (count($color) === 2) {
             return $colors[$color[1]];
         } else {
-            throw new \Exception('Color name not found '.$colorName, 1);
+            throw new ColorNotFoundException('Color name not found '.$colorName, 1);
         }
     }
 }
