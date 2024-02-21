@@ -16,8 +16,8 @@
         @endif
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-body antialiased">
-        <div class="flex flex-col min-h-screen place-content-center bg-gray-50 dark:bg-gray-900">
+    <body class="font-body antialiased {{ config('tiffey.app-bg-color') }} {{ config('tiffey.app-text-color') }}">
+        <div class="flex flex-col min-h-screen place-content-center">
             <div class="max-w-2xl md:px-5 md:w-2/4 md:mx-auto text-center">
                 <div class="flex flex-row gap-2 place-content-center pb-4">
                     @if(\View::exists('components.icon.logo'))

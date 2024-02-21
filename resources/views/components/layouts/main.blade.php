@@ -17,7 +17,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-body antialiased">
-        <div class="min-h-screen bg-gray-50 dark:bg-gray-900 dark:text-white pt-2">
+        <div class="min-h-screen {{ config('tiffey.app-bg-color') }} {{ config('tiffey.app-text-color') }} pt-2">
             <div class="md:container md:mx-auto shadow-b md:px-5">
                 <x-tiffey::nav />
             </div>
