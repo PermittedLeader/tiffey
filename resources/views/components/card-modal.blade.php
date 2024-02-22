@@ -1,7 +1,7 @@
 @props(['noPadding'=>false,'open'=>true,'collapsible'=>false])
 <div 
     class="inset-0 overflow-y-auto p-6 z-40" 
-    x-data="{ modal: @entangle($attributes->wire('model')).defer }" 
+    x-data="{ modal: @entangle($attributes->wire('model')) }" 
     x-show="modal" 
     x-on:keydown.escape.window="modal = false"
     >
