@@ -11,7 +11,7 @@ return [
 
     'app-bg-color' => 'bg-gray-50 dark:bg-gray-900',
 
-    'app-text-color' => 'text-white dark:text-white',
+    'app-text-color' => 'text-black dark:text-white',
 
     'card-bg-color' => 'bg-white dark:bg-gray-500 dark:bg-opacity-25',
 
