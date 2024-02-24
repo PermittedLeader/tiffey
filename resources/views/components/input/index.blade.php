@@ -25,6 +25,9 @@
         $fieldClasses .= " border-warning-mid";
     @endphp
 @enderror
+@if($type == 'hidden')
+    <input type="hidden" {{ $attributes->whereStartsWith('value') }} name="{{ $name }}" id="{{ $id }}" @required($required) /> 
+@else
 <div class="{{ $divClasses }}">
     <label class="{{ $textClasses }}" for="{{ $id }}">
         {{ $label }}
@@ -41,3 +44,4 @@
     @enderror
     <input type="{{ $type }}" {{ $attributes->merge(['class'=>$fieldClasses]) }} name="{{ $name }}" id="{{ $id }}" @required($required) /> 
 </div>
+@endif
