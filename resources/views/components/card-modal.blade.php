@@ -8,8 +8,8 @@
     <div class="relative w-full h-full max-w-4xl md:h-auto">
         <div class="fixed inset-0 transform" x-on:click="modal = false">
             <div class="absolute inset-0 bg-gray-700 bg-opacity-75" >
-                <div class="z-50 bg-white opacity-100 max-w-2xl mx-auto my-2 md:mt-[10vh] shadow-xl max-h-[75vh] overflow-y-auto" @click.stop="">
-                    <x-tiffey::card :attributes="$attributes" inModal="true">
+                <div class="z-50 opacity-100 max-w-2xl mx-auto my-2 md:mt-[10vh] shadow-xl max-h-[75vh] overflow-y-auto" @click.stop="">
+                    <x-tiffey::card :attributes="$attributes->merge(['class'=>'!bg-opacity-100'])" inModal="true">
                         @if (isset($header))
                             <x-slot:header>{{ $header }}</x-slot>
                         @endif
