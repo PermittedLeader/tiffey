@@ -16,9 +16,9 @@
             required 
             autocomplete="current-password" />
         <x-slot:footerActions>
-            <x-tiffey::button color="bg-danger-mid">
+            <x-tiffey::form-button color="bg-danger-mid">
                 {{ __('Delete Account') }}
-            </x-tiffey::button>
+            </x-tiffey::form-button>
         </x-slot:footerActions>
     </x-tiffey::card>
 </form>
