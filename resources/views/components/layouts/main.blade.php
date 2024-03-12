@@ -15,6 +15,7 @@
             @livewireStyles
         @endif
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <script defer src="https://unpkg.com/@alpinejs/ui@3.13.2-beta.0/dist/cdn.min.js"></script>
     </head>
     <body class="font-body antialiased">
         <div class="min-h-screen {{ config('tiffey.app-bg-color') }} {{ config('tiffey.app-text-color') }} pt-2">
