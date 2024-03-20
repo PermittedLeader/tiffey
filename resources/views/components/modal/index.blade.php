@@ -31,7 +31,7 @@
                 <div
                     x-dialog:panel
                     x-transition.in
-                    class="relative max-w-xl w-full bg-white rounded-t-xl sm:rounded-b-xl shadow-lg overflow-hidden"
+                    class="relative max-w-[80vw] w-full bg-white dark:bg-gray-900 rounded-t-xl sm:rounded-b-xl shadow-lg overflow-hidden"
                 >
                     <!-- Mobile: Top "grab" handle... -->
                     <div
