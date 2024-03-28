@@ -1,5 +1,6 @@
 <x-tiffey::layouts.guest-layout>
     <form method="POST" action="{{ route('password.store') }}">
+        @csrf
         <x-tiffey::card>
             <input type="hidden" name="token" value="{{ $request->route('token') }}">
             <x-tiffey::input

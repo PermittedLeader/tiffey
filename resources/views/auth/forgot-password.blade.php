@@ -6,7 +6,7 @@
         @csrf
         @if (session('status'))
             <x-tiffey::alert level="info">
-                {{ $status }}
+                {{ session('status') }}
             </x-tiffey::alert>
         @endif
 

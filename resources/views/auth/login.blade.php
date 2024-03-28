@@ -1,6 +1,6 @@
 <x-tiffey::layouts.guest-layout>
     @if (session('status'))
-        <x-tiffey::alert level="info">{{ $status }}</x-tiffey::alert>
+        <x-tiffey::alert level="info">{{ session('status') }}</x-tiffey::alert>
     @endif
 
     <form method="POST" action="{{ route('login') }}" class="w-full">
