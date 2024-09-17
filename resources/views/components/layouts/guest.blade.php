@@ -53,6 +53,11 @@
             <div class="max-w-2xl md:px-5 md:w-2/4 md:mx-auto">
                 {{ $slot }} 
             </div>
+            <div class="absolute bottom-1 w-full">
+                <footer class="md:mx-auto py-3 px-3 md:px-5 text-gray-mid text-sm">
+                    <x-tiffey::layouts.footer />
+                </footer>
+            </div>
         </div>
 
         @stack('modals')
