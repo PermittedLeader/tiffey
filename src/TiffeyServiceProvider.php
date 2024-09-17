@@ -3,7 +3,6 @@ namespace Permittedleader\Tiffey;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
-use Livewire\Livewire;
 
 class TiffeyServiceProvider extends ServiceProvider
 {

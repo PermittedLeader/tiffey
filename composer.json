@@ -1,13 +1,16 @@
 {
     "name": "permittedleader/tiffey",
+    "description": "Tiffey template for Laravel. Built in Blade",
     "type": "project",
     "require": {
-        "laravel/framework": "^10.0"
+        "laravel/framework": "^10.0",
+        "permittedleader/flash-messages": "^2.0.2"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.10",
         "pestphp/pest": "^2.33",
-        "pestphp/pest-plugin-laravel": "^2.2"
+        "pestphp/pest-plugin-laravel": "^2.2",
+        "larswiegers/laravel-translations-checker": "^0.9.2"
     },
     "license": "GPL-3.0-only",
     "autoload": {
@@ -16,6 +19,12 @@
         ],
         "psr-4": {
             "Permittedleader\\Tiffey\\": "src/"
+        }
+    },
+    "repositories": {
+        "permittedleader/flash-messages": {
+            "type": "vcs",
+            "url": "https://github.com/PermittedLeader/flash-messages.git"
         }
     },
     "authors": [
