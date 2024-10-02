@@ -18,6 +18,16 @@
         <div class="flex flex-col md:flex md:flex-row md:gap-2 border-solid border-t md:border-none" x-bind:class="{ 'hidden': !open }">
             <x-tiffey::nav.link href="/" active="{{ request()->routeIs('welcome') }}">Home</x-tiffey::nav.link>
             <x-tiffey::nav.link href="/dashboard" :active="request()->routeIs('dashboard')">Dashboard</x-tiffey::nav.link>
+            @if(\Composer\InstalledVersions::isInstalled('permittedleader/tiffey-auth'))
+            <x-tiffey::nav.dropdown title="{{ __('auth::auth.menu_name') }}">
+                <x-tiffey::nav.link href="{{ route('roles.index') }}" :active="request()->routeIs('roles.*')">
+                    {{ trans_choice('auth::auth.roles.name',2) }}
+                </x-tiffey::nav.link>
+                <x-tiffey::nav.link href="{{ route('permissions.index') }}" :active="request()->routeIs('permissions.*')">
+                    {{ trans_choice('auth::auth.permissions.name',2) }}
+                </x-tiffey::nav.link>
+            </x-tiffey::nav.dropdown>
+            @endif
         </div>
     </div>
     <div class="flex flex-col md:flex md:flex-row md:gap-2" x-bind:class="{ 'hidden': !open }">
