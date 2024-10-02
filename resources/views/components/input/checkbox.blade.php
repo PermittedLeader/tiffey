@@ -1,4 +1,4 @@
-@props(['label','hint'=>false,'name'=>false,'inBlock'=>false, 'id'=>false])
+@props(['label','hint'=>false,'name'=>false,'inBlock'=>false, 'id'=>false, 'checked'=>"false"])
 @php
     if(!$name){
         $name = Str::camel($label);
@@ -8,7 +8,7 @@
     }
 @endphp
 <div class="flex flex-row items-center ml-1">
-    <input type="checkbox" id="{{ $id }}" name="{{ $name }}" {{ $attributes->merge(['class'=>'my-2 mr-3 p-2 '.config('tiffey.border-color')]) }}>
+    <input type="checkbox" id="{{ $id }}" name="{{ $name }}" {{ $attributes->merge(['class'=>'my-2 mr-3 p-2 '.config('tiffey.border-color')]) }} {{ $checked ? 'checked' : '' }} />
     @if(!$inBlock)
     <label class="font-bold" for="{{ $id }}">
         {{ $label }}
