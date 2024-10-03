@@ -19,11 +19,17 @@
             $sizeClasses = "px-3 py-2 text-sm";
             break;
     }
-    $buttonClasses = 'inline-block my-auto text-center '.config('tiffey.rounded').' font-bold dark:border dark:border-opacity-25 dark:border-'.$text.' text-'.$text.' '.$color.' '.$sizeClasses;
+    $buttonClasses = 'relative data-[loading]:pointer-events-none inline-block my-auto text-center '.config('tiffey.rounded').' font-bold dark:border dark:border-opacity-25 dark:border-'.$text.' text-'.$text.' '.$color.' '.$sizeClasses;
     if(!$attributes->has('disabled')){
         $buttonClasses .= " hover:bg-opacity-75 hover:shadow-inner";
     }
 @endphp
-<a {{ $attributes->whereStartsWith('href') }} {{ $attributes->wire('click') }} {{ $attributes->whereDoesntStartWith(['href','wire:click'])->merge(['class'=>$buttonClasses]) }} role="button">
+<a {{ $attributes->whereStartsWith('href') }} {{ $attributes->wire('click') }} {{ $attributes->whereDoesntStartWith(['href','wire:click'])->merge(['class'=>$buttonClasses]) }} role="button" wire:loading.attr="data-loading">
+    <div class="[[data-loading]>&]:opacity-0 transition-opacity delay-100">
         {{ $slot }}
+    </div>
+    
+    <div class="[[data-loading]>&]:opacity-100 transition-opacity delay-100 opacity-0 absolute inset-0 flex items-center justify-center">
+        <x-tiffey::icon.loading />
+    </div>
 </a>
