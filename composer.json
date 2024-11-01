@@ -3,8 +3,8 @@
     "description": "Tiffey template for Laravel. Built in Blade",
     "type": "project",
     "require": {
-        "laravel/framework": "^10.0",
-        "permittedleader/flash-messages": "^2.0.2"
+        "laravel/framework": ">=10.0",
+        "permittedleader/flash-messages": ">=2.0.2"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.10",
