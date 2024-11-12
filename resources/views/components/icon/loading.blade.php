@@ -1,2 +1,2 @@
-@props(['icon'=>'fa-solid fa-rotate fa-spin','label'=>'Loading...'])
-<x-tiffey::icon icon="{{ $icon }}" label="{{ $label }}" />
+@props(['icon'=>'fa-solid fa-rotate fa-spin'])
+<i {{ $attributes->merge(['class'=>$icon]) }} aria-hidden="true"></i>

@@ -25,11 +25,13 @@
     }
 @endphp
 <a {{ $attributes->whereStartsWith('href') }} {{ $attributes->wire('click') }} {{ $attributes->whereDoesntStartWith(['href','wire:click'])->merge(['class'=>$buttonClasses]) }} role="button" wire:loading.attr="data-loading">
+    <div class="[[data-loading]>&]:opacity-100 transition-opacity delay-200 opacity-0 absolute inset-0 flex items-center justify-center">
+        <x-tiffey::icon.loading />
+    </div>
+    
     <div class="[[data-loading]>&]:opacity-0 transition-opacity delay-200">
         {{ $slot }}
     </div>
     
-    <div class="[[data-loading]>&]:opacity-100 transition-opacity delay-200 opacity-0 absolute inset-0 flex items-center justify-center">
-        <x-tiffey::icon.loading />
-    </div>
+    
 </a>

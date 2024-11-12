@@ -21,11 +21,12 @@
     }
 @endphp
     <div {{ $attributes->merge(['class'=>'relative data-[loading]:pointer-events-none inline-block my-auto text-center '.config('tiffey.rounded').' hover:bg-opacity-75 hover:shadow-inner font-bold dark:border dark:border-'.$text.' text-'.$text.' '.$color.' '.$sizeClasses]) }} role="button" wire:loading.attr="data-loading"> 
+        <div class="[[data-loading]>&]:opacity-100 transition-opacity delay-200 opacity-0 absolute inset-0 flex items-center justify-center">
+            <x-tiffey::icon.loading />
+        </div>
         <div class="[[data-loading]>&]:opacity-0 transition-opacity delay-200">
             {{ $slot }}
         </div>
         
-        <div class="[[data-loading]>&]:opacity-100 transition-opacity delay-200 opacity-0 absolute inset-0 flex items-center justify-center">
-            <x-tiffey::icon.loading />
-        </div>
+        
     </div>
