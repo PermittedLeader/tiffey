@@ -13,6 +13,10 @@ return [
 
     'app-text-color' => 'text-black dark:text-white',
 
+    'app-name-color'=> '', #defaults to app-text-color
+
+    'app-name-color-login'=>'', #defaults to app-text-color
+
     'card-bg-color' => 'bg-white dark:bg-gray-500 dark:bg-opacity-25',
 
     'card-text-color' => 'text-black dark:text-white',

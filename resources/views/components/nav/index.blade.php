@@ -6,7 +6,7 @@
                 <x-icon.logo class="h-16" />
             </div>
             @endif
-            <div class="my-auto px-2 text-xl font-bold text-brand-mid">
+            <div class="my-auto px-2 text-xl font-bold {{ config('tiffey.app-name-color') }}">
                 <a href="/">{{ config('app.name') }}</a>
             </div>
             <div @click="open = ! open" class="my-2 mr-4 flex md:hidden">

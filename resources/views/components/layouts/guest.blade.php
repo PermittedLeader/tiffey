@@ -25,7 +25,7 @@
                         <x-icon.logo class="h-16" />
                     </div>
                     @endif
-                    <div class="my-auto px-2 text-xl font-bold text-brand-mid">
+                    <div class="my-auto px-2 text-xl font-bold {{ config('tiffey.app-name-color') }}">
                         {{ config('app.name') }}
                     </div>
                 </div>
