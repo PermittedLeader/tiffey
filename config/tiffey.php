@@ -13,9 +13,9 @@ return [
 
     'app-text-color' => 'text-black dark:text-white',
 
-    'app-name-color'=> '', #defaults to app-text-color
+    'app-name-color'=> 'text-brand-mid', #defaults to app-text-color if unset
 
-    'app-name-color-login'=>'', #defaults to app-text-color
+    'app-name-color-login'=>'text-brand-mid', #defaults to app-text-color
 
     'card-bg-color' => 'bg-white dark:bg-gray-500 dark:bg-opacity-25',
 
