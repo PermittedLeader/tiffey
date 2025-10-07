@@ -3,7 +3,7 @@
     if($color){
         $text = contrastColor(cssToHex($color)); 
     } else {
-        $color = "bg-gray-100";
+        $color = config('tiffey.buttons.default.bg-color');
         $text = contrastColor(cssToHex($color));
     }
     switch ($size) {
@@ -19,7 +19,7 @@
             $sizeClasses = "px-3 py-2 text-sm";
             break;
     }
-    $buttonClasses = 'relative data-[loading]:pointer-events-none inline-block my-auto text-center '.config('tiffey.rounded').' font-bold dark:border dark:border-opacity-25 dark:border-'.$text.' text-'.$text.' '.$color.' '.$sizeClasses;
+    $buttonClasses = 'relative data-[loading]:pointer-events-none inline-block my-auto text-center '.config('tiffey.app.rounded').' font-bold dark:border dark:border-opacity-25 dark:border-'.$text.' text-'.$text.' '.$color.' '.$sizeClasses;
     if(!$attributes->has('disabled')){
         $buttonClasses .= " hover:bg-opacity-75 hover:shadow-inner";
     }
@@ -29,7 +29,7 @@
         <x-tiffey::icon.loading />
     </div>
     
-    <div class="[[data-loading]>&]:opacity-0 transition-opacity delay-200">
+    <div class="[[data-loading]>&]:opacity-0 transition-opacity delay-200 {{ config('tiffey.buttons.default.text-styles') }}">
         {{ $slot }}
     </div>
     

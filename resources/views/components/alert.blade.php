@@ -26,7 +26,7 @@
             $classes .= ' my-3 px-3 py-2 border-l-8';
         }
 @endphp
-<div x-data="{open: true}" class="border-solid {{ config('tiffey.rounded') }} {{ $classes }}" x-show="open" x-transition:leave="transition ease-in-out duration-300" x-transition:leave-start="opacity-100 transform scale-100" x-transition:leave-end="opacity-0 transform scale-0" role="alert">
+<div x-data="{open: true}" class="border-solid {{ config('tiffey.app.rounded') }} {{ $classes }}" x-show="open" x-transition:leave="transition ease-in-out duration-300" x-transition:leave-start="opacity-100 transform scale-100" x-transition:leave-end="opacity-0 transform scale-0" role="alert">
     <div class="flex flex-row">
         <div class="flex-grow">
             <div class="flex flex-col h-full">

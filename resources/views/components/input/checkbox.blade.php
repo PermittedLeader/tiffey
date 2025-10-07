@@ -8,7 +8,7 @@
     }
 @endphp
 <div class="flex flex-row items-center ml-1">
-    <input type="checkbox" id="{{ $id }}" name="{{ $name }}" {{ $attributes->merge(['class'=>'my-2 mr-3 p-2 '.config('tiffey.border-color')]) }} @checked($checked)/>
+    <input type="checkbox" id="{{ $id }}" name="{{ $name }}" {{ $attributes->merge(['class'=>'my-2 mr-3 p-2 '.config('tiffey.app.border-color')]) }} @checked($checked)/>
     @if(!$inBlock)
     <label class="font-bold" for="{{ $id }}">
         {{ $label }}

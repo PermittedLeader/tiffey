@@ -16,7 +16,7 @@
         @endif
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-body antialiased {{ config('tiffey.app-bg-color') }} {{ config('tiffey.app-text-color') }}">
+    <body class="font-body antialiased {{ config('tiffey.app.bg-color') }} {{ config('tiffey.app.text-color') }}">
         <div class="flex flex-col min-h-screen place-content-center">
             <div class="max-w-2xl md:px-5 md:w-2/4 md:mx-auto text-center">
                 <div class="flex flex-row gap-2 place-content-center pb-4">
@@ -25,7 +25,7 @@
                         <x-icon.logo class="h-16" />
                     </div>
                     @endif
-                    <div class="my-auto px-2 text-xl font-bold {{ config('tiffey.app-name-color') }}">
+                    <div class="my-auto px-2 text-xl font-bold {{ config('tiffey.app.name-color-login','tiffey.app.name-color','tiffey.app.text-color') }}">
                         {{ config('app.name') }}
                     </div>
                 </div>

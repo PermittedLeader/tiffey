@@ -3,23 +3,27 @@
 return [
     'livewire' => false,
 
-    'rounded' => 'rounded-sm',
+    'buttons' => [
+        'default' => [
+            'text-styles'=> '',
+            'bg-color' => 'bg-gray-100',
+        ],
+    ],
 
-    'card-border' => 'border-t-4 border-secondary-mid',
+    'app' => [
+        'bg-color' => 'bg-gray-50 dark:bg-gray-900',
+        'text-color' => 'text-black dark:text-white',
+        'name-color'=> 'text-brand-mid', #defaults to app-text-color if unset
+        'name-color-login'=>'text-brand-mid', #defaults to app-text-color
+        'rounded' => 'rounded-sm',
+        'border-color' => 'border-grey-500',
+    ],
 
-    'border-color' => 'border-grey-500',
-
-    'app-bg-color' => 'bg-gray-50 dark:bg-gray-900',
-
-    'app-text-color' => 'text-black dark:text-white',
-
-    'app-name-color'=> 'text-brand-mid', #defaults to app-text-color if unset
-
-    'app-name-color-login'=>'text-brand-mid', #defaults to app-text-color
-
-    'card-bg-color' => 'bg-white dark:bg-gray-500 dark:bg-opacity-25',
-
-    'card-text-color' => 'text-black dark:text-white',
+    'card' => [
+        'border' => 'border-t-4 border-secondary-mid',
+        'bg-color' => 'bg-white dark:bg-gray-500 dark:bg-opacity-25',
+        'text-color' => 'text-black dark:text-white',
+    ],
 
     'colors'=>[
         "no" => "#ec008e",
